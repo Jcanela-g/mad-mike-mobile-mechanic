@@ -1,11 +1,12 @@
 import "./Hero.css";
+import logo from "../assets/logo.png";
 
 const Hero = () => (
   <header className="hero" id="hero">
     <div className="container hero__container">
       <div className="hero__visual">
-        <div className="hero__logo" aria-hidden="true">
-          <span>MM</span>
+        <div className="hero__logo">
+          <img src={logo} alt="Mad Mikes Mobile Mechanic logo" />
         </div>
         <div className="hero__badge">
           <span className="pill">Mobile mechanic</span>
