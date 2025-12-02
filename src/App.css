@@ -1,15 +1,16 @@
 :root {
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
-  color: #f5f7fb;
-  background-color: #0f1115;
-  --accent: #e63946;
-  --accent-strong: #ff5c68;
-  --muted: #c3c9d4;
-  --card: #151924;
-  --border: #1f2330;
-  --surface: #0b0e14;
-  --heading: #f9fbff;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  --bg-main: #111111;
+  --bg-section: #1a1a1a;
+  --accent-red: #c62828;
+  --accent-green: #1b5e20;
+  --accent-yellow: #f9d923;
+  --text-main: #ffffff;
+  --text-muted: #b3b3b3;
+  --border-subtle: #2a2a2a;
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -21,10 +22,8 @@
 
 body {
   margin: 0;
-  background: radial-gradient(120% 120% at 30% 20%, rgba(230, 57, 70, 0.08), transparent),
-    radial-gradient(100% 100% at 80% 0%, rgba(255, 92, 104, 0.07), transparent),
-    var(--surface);
-  color: #e8ecf2;
+  background: linear-gradient(180deg, #111111 0%, #0d0d0d 100%);
+  color: var(--text-main);
 }
 
 a {
@@ -62,25 +61,26 @@ h1,
 h2,
 h3 {
   margin: 0 0 0.75rem;
-  color: var(--heading);
+  color: var(--text-main);
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 p {
   margin: 0 0 1rem;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-red);
   font-weight: 700;
+  margin-bottom: 0.35rem;
 }
 
 .section-title {
@@ -89,12 +89,12 @@ p {
 }
 
 .muted {
-  color: var(--muted);
+  color: var(--text-muted);
 }
 
 .card {
-  background: linear-gradient(145deg, #161a25, #0f121b);
-  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-section) 0%, #141414 100%);
+  border: 1px solid var(--border-subtle);
   border-radius: 16px;
   padding: 1.25rem;
   box-shadow: var(--shadow);
@@ -110,41 +110,45 @@ p {
   border: 1px solid transparent;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
   font-size: 1rem;
   text-align: center;
 }
 
 .btn-primary {
-  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  background: var(--accent-red);
   color: #fff;
-  box-shadow: 0 10px 25px rgba(230, 57, 70, 0.35);
+  border-color: transparent;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(230, 57, 70, 0.45);
+  background: #a32020;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
 
 .btn-secondary {
-  background: #1a1f2c;
-  color: #f5f7fb;
-  border: 1px solid var(--border);
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--border-subtle);
 }
 
 .btn-secondary:hover {
-  background: #202636;
+  background: #1f1f1f;
+  border-color: var(--accent-red);
   transform: translateY(-2px);
 }
 
 .btn-outline {
   background: transparent;
-  color: #f5f7fb;
-  border: 1px solid var(--border);
+  color: #fff;
+  border: 1px solid var(--border-subtle);
 }
 
 .btn-outline:hover {
-  border-color: #343a4b;
+  background: rgba(198, 40, 40, 0.08);
+  border-color: var(--accent-red);
   transform: translateY(-2px);
 }
 
@@ -159,15 +163,15 @@ p {
   gap: 0.4rem;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: rgba(230, 57, 70, 0.12);
-  color: var(--accent);
+  background: rgba(198, 40, 40, 0.16);
+  color: var(--accent-red);
   font-weight: 600;
-  border: 1px solid rgba(230, 57, 70, 0.18);
+  border: 1px solid rgba(198, 40, 40, 0.3);
   font-size: 0.95rem;
 }
 
 .kicker {
-  color: var(--accent);
+  color: var(--accent-red);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -177,7 +181,7 @@ p {
 
 .tagline {
   font-size: 1.1rem;
-  color: #d7dce5;
+  color: var(--text-muted);
   margin-bottom: 1.3rem;
 }
 
@@ -185,23 +189,23 @@ p {
   width: 100%;
   padding: 0.9rem 1rem;
   border-radius: 12px;
-  border: 1px solid var(--border);
-  background: #0f121b;
-  color: #f5f7fb;
+  border: 1px solid var(--border-subtle);
+  background: #181818;
+  color: var(--text-main);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .input:focus {
   outline: none;
-  border-color: rgba(230, 57, 70, 0.7);
-  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.25);
 }
 
 label {
   display: block;
   font-weight: 600;
   margin-bottom: 0.35rem;
-  color: #e8ecf2;
+  color: var(--text-main);
 }
 
 .grid-two {
@@ -212,13 +216,13 @@ label {
 .status {
   margin-top: 0.5rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-red);
 }
 
 button:focus-visible,
 .btn:focus-visible,
 a:focus-visible {
-  outline: 2px solid rgba(230, 57, 70, 0.7);
+  outline: 2px solid rgba(198, 40, 40, 0.7);
   outline-offset: 2px;
 }
 

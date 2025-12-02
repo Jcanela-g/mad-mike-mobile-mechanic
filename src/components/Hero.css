@@ -4,7 +4,7 @@
 
 .hero__container {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -19,11 +19,13 @@
   width: 130px;
   height: 130px;
   border-radius: 28px;
-  background: linear-gradient(135deg, rgba(230, 57, 70, 0.9), rgba(255, 92, 104, 0.9));
-  box-shadow: 0 20px 35px rgba(230, 57, 70, 0.35), 0 0 0 12px rgba(230, 57, 70, 0.15);
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  border: 2px solid var(--accent-red);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
   display: grid;
   place-items: center;
   padding: 4px;
+  position: relative;
 }
 
 .hero__logo img {
@@ -32,11 +34,16 @@
   object-fit: cover;
   border-radius: 22px;
   display: block;
+  box-shadow: 0 0 4px var(--accent-red), 0 0 12px rgba(198, 40, 40, 0.6);
 }
 
 .hero__badge {
   display: grid;
   gap: 0.35rem;
+  padding: 0.8rem 1rem;
+  background: var(--bg-section);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
 }
 
 .hero__content h1 {
@@ -46,6 +53,7 @@
 .hero__content {
   display: grid;
   gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .hero__actions .btn {
@@ -58,8 +66,8 @@
   }
 
   .hero__container {
-    grid-template-columns: 1fr 1.1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 2.25rem;
   }
 
   .hero__actions .btn {

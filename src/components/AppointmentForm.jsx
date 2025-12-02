@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './AppointmentForm.css';
 
-const services = ['Oil Change', 'Diagnostics', 'Tune-Ups', 'Brakes'];
+const services = ['Oil Change', 'Diagnostics', 'Tune-Ups', 'Brakes', 'Other'];
 
 const initialForm = {
   name: '',
@@ -11,6 +11,7 @@ const initialForm = {
   service: '',
   date: '',
   notes: '',
+  otherDetails: '',
 };
 
 const AppointmentForm = () => {
@@ -115,6 +116,20 @@ const AppointmentForm = () => {
                 onChange={handleChange}
               />
             </div>
+            {formData.service === 'Other' && (
+              <div className="form-field form-field--full">
+                <label htmlFor="otherDetails">Describe the requested service</label>
+                <textarea
+                  className="input"
+                  id="otherDetails"
+                  name="otherDetails"
+                  placeholder="Tell Mike more about what you need"
+                  rows="4"
+                  value={formData.otherDetails}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
             <div className="form-field form-field--full">
               <label htmlFor="notes">Extra Notes</label>
               <textarea

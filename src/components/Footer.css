@@ -1,11 +1,13 @@
 .footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-subtle);
   padding: 2rem 0;
-  background: #0b0d13;
+  background: var(--bg-main);
 }
 
 .footer__container {
   text-align: center;
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0.25rem 0;
 }
