@@ -27,3 +27,16 @@
     justify-self: start;
   }
 }
+
+.status {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.status--error {
+  color: var(--accent-red);
+}
+
+.status--success {
+  color: var(--text-muted);
+}

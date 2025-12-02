@@ -216,7 +216,6 @@ label {
 .status {
   margin-top: 0.5rem;
   font-weight: 600;
-  color: var(--accent-red);
 }
 
 button:focus-visible,

@@ -1,22 +1,23 @@
-import { useState } from 'react';
-import './AppointmentForm.css';
+import { useState } from "react";
+import "./AppointmentForm.css";
 
-const services = ['Oil Change', 'Diagnostics', 'Tune-Ups', 'Brakes', 'Other'];
+const services = ["Oil Change", "Diagnostics", "Tune-Ups", "Brakes", "Other"];
 
 const initialForm = {
-  name: '',
-  phone: '',
-  makeModel: '',
-  year: '',
-  service: '',
-  date: '',
-  notes: '',
-  otherDetails: '',
+  name: "",
+  phone: "",
+  makeModel: "",
+  year: "",
+  service: "",
+  date: "",
+  notes: "",
+  otherDetails: "",
 };
 
 const AppointmentForm = () => {
   const [formData, setFormData] = useState(initialForm);
-  const [status, setStatus] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -25,8 +26,37 @@ const AppointmentForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Appointment request submitted:', formData);
-    setStatus('Request sent. Mike will reach out shortly to confirm.');
+    const digitsOnly = formData.phone.replace(/\D/g, "");
+
+    if (!formData.name.trim()) {
+      setErrorMessage("Please enter your name.");
+      setSuccessMessage("");
+      return;
+    }
+
+    if (digitsOnly.length < 10) {
+      setErrorMessage(
+        "Please enter a valid phone number (at least 10 digits)."
+      );
+      setSuccessMessage("");
+      return;
+    }
+
+    if (!formData.service) {
+      setErrorMessage("Please select a service.");
+      setSuccessMessage("");
+      return;
+    }
+
+    setErrorMessage("");
+    console.log("Appointment request submitted:", {
+      ...formData,
+      phone: digitsOnly,
+    });
+    setFormData(initialForm);
+    setSuccessMessage(
+      "Thanks! Your request has been received. We'll contact you soon."
+    );
   };
 
   return (
@@ -34,7 +64,9 @@ const AppointmentForm = () => {
       <div className="container">
         <p className="eyebrow">Book an Appointment</p>
         <h2 className="section-title">Book an Appointment</h2>
-        <p className="muted">Share a few details and we’ll schedule a visit that works for you.</p>
+        <p className="muted">
+          Share a few details and we’ll schedule a visit that works for you.
+        </p>
         <form className="appointment__form card" onSubmit={handleSubmit}>
           <div className="form-grid">
             <div className="form-field">
@@ -116,9 +148,11 @@ const AppointmentForm = () => {
                 onChange={handleChange}
               />
             </div>
-            {formData.service === 'Other' && (
+            {formData.service === "Other" && (
               <div className="form-field form-field--full">
-                <label htmlFor="otherDetails">Describe the requested service</label>
+                <label htmlFor="otherDetails">
+                  Describe the requested service
+                </label>
                 <textarea
                   className="input"
                   id="otherDetails"
@@ -146,9 +180,18 @@ const AppointmentForm = () => {
           <button className="btn btn-primary" type="submit">
             Submit Request
           </button>
-          {status ? (
-            <p className="status" role="status" aria-live="polite">
-              {status}
+          {errorMessage ? (
+            <p className="status status--error" role="status" aria-live="polite">
+              {errorMessage}
+            </p>
+          ) : null}
+          {successMessage ? (
+            <p
+              className="status status--success"
+              role="status"
+              aria-live="polite"
+            >
+              {successMessage}
             </p>
           ) : null}
         </form>
