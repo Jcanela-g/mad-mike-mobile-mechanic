@@ -87,9 +87,7 @@ Then open the URL shown in the terminal.
 
 ## 🛠️ Future Improvements
 
-- Hook appointment form to:
-
-- Email service, SMS gateway, or backend API
+- Hook appointment form to: Email service, SMS gateway, or backend API
 
 - Replace placeholder images with real job photos
 
@@ -98,6 +96,10 @@ Then open the URL shown in the terminal.
 - Add SEO meta tags and social sharing previews
 
 - Optional admin view to manage appointments
+
+## 🌐 Live Demo
+
+https://mad-mike-mobile-mechanic.vercel.app/
 
 ## 🧑‍💻 Author
 
