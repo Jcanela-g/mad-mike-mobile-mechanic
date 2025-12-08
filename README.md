@@ -92,6 +92,74 @@ The design uses a rugged automotive-style theme inspired by the client's bulldog
 
 ---
 
+## 📸 Project Showcase
+
+### 🖥️ Desktop Hero
+
+<p align="center">
+  <img src="screenshots/hero-dtv.png" width="800" />
+</p>
+
+### 📱 Mobile Hero
+
+<p align="center">
+  <img src="screenshots/hero-mobile.jpg" width="350" />
+</p>
+
+---
+
+### 🧰 Services Section (Desktop)
+
+<p align="center">
+  <img src="screenshots/services-dtv.png" width="800" />
+</p>
+
+### 🧰 Services Section (Mobile)
+
+<p align="center">
+  <img src="screenshots/service-mobile.jpg" width="350" />
+</p>
+
+---
+
+### 🖼️ Recent Work / Gallery (Desktop)
+
+<p align="center">
+  <img src="screenshots/gallery-dtv.png" width="800" />
+</p>
+
+---
+
+### 📝 Appointment Form (Desktop)
+
+<p align="center">
+  <img src="screenshots/form-dtv.png" width="800" />
+</p>
+
+### 📝 Appointment Form (Mobile)
+
+<p align="center">
+  <img src="screenshots/form-mobile.jpg" width="350" />
+</p>
+
+---
+
+### ✅ Successful Form Submission
+
+<p align="center">
+  <img src="screenshots/successful-submit.png" width="800" />
+</p>
+
+---
+
+### 📲 PWA Install Screen
+
+<p align="center">
+  <img src="screenshots/PWA.jpg" width="350" />
+</p>
+
+---
+
 ## 🌐 Live Demo
 
 https://mad-mike-mobile-mechanic.vercel.app/
