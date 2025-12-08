@@ -18,13 +18,14 @@ const AppointmentForm = () => {
   const [formData, setFormData] = useState(initialForm);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const digitsOnly = formData.phone.replace(/\D/g, "");
 
@@ -49,14 +50,45 @@ const AppointmentForm = () => {
     }
 
     setErrorMessage("");
-    console.log("Appointment request submitted:", {
-      ...formData,
+    setLoading(true);
+
+    const payload = {
+      name: formData.name,
       phone: digitsOnly,
-    });
-    setFormData(initialForm);
-    setSuccessMessage(
-      "Thanks! Your request has been received. We'll contact you soon."
-    );
+      carMakeModel: formData.makeModel,
+      carYear: formData.year,
+      serviceNeeded: formData.service,
+      preferredDate: formData.date,
+      extraNotes: formData.notes,
+      otherDetails: formData.service === "Other" ? formData.otherDetails : "",
+    };
+
+    try {
+      const response = await fetch("https://formspree.io/f/xwpgnqjv", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        console.log("Appointment request submitted:", payload);
+        setFormData(initialForm);
+        setSuccessMessage(
+          "Thanks! Your request has been received. We'll contact you soon."
+        );
+      } else {
+        throw new Error("Unexpected response");
+      }
+    } catch (err) {
+      setErrorMessage(
+        "Something went wrong sending your request. Please try again or call/text us directly."
+      );
+      setSuccessMessage("");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -177,8 +209,8 @@ const AppointmentForm = () => {
               />
             </div>
           </div>
-          <button className="btn btn-primary" type="submit">
-            Submit Request
+          <button className="btn btn-primary" type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Submit Request"}
           </button>
           {errorMessage ? (
             <p className="status status--error" role="status" aria-live="polite">
