@@ -64,7 +64,7 @@ const AppointmentForm = () => {
     };
 
     try {
-      const response = await fetch("https://formspree.io/f/xwpgnqjv", {
+      const response = await fetch("https://formspree.io/f/xldqwwnp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

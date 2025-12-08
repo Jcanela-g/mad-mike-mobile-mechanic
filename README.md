@@ -1,108 +1,105 @@
-# Mad Mikes Mobile Mechanic
+# Mad Mikes Mobile Mechanic — Landing Page & Booking App
 
-A mobile-first, fully responsive marketing and booking site for a mobile mechanic business.  
-Built with **Vite + React + JavaScript + CSS** and structured to be easy to maintain, extend, and deploy.
+**Live Site:** https://mad-mike-mobile-mechanic.vercel.app/  
+**Tech:** Vite + React, CSS, Formspree, Vercel, PWA Manifest
 
-## ✨ Project Overview
+---
 
-Mad Mikes Mobile Mechanic needs a simple, professional online presence where potential customers can:
+## 🚗 Project Overview
 
-- Learn what services are offered
-- See examples of previous work
-- Quickly book an appointment
-- Call or text directly from the site (especially on mobile)
+Mad Mikes Mobile Mechanic is a one-page landing/booking website for a mobile mechanic located in Saint Cloud, FL.  
+The goal was to create a fast, modern, mobile-first experience where users can:
 
-This project is a single-page React application that delivers exactly that.
+- View available services
+- See examples of recent work
+- Submit an appointment request
+- Call or text directly from their phone
+- Install the website as a mobile app (PWA)
 
-## 🧱 Tech Stack
+This project includes strong UX design, interactive form validation, backendless email functionality, and SEO optimization.
 
-- **Vite** (build tool)
-- **React** (UI)
-- **JavaScript (ES6+)**
-- **CSS** (mobile-first, responsive)
-- **HTML5**
+---
+
+## 🎨 Brand-Driven UI
+
+The design uses a rugged automotive-style theme inspired by the client's bulldog logo:
+
+- ⚫ Industrial black & charcoal backgrounds
+- 🔴 Mechanic red accent color
+- ⚪ High-contrast white & muted text
+- 🛠️ Clean card-based layout for services and gallery
+
+---
 
 ## 🧩 Features
 
-- **Hero Section**
+### ✔ Responsive Hero Section
 
-  - Business name, tagline, and clear call-to-action buttons
-  - “Call Now”, “Text Us”, and “Book Appointment” actions
+- Bulldog logo
+- Business name + tagline
+- One-tap **Call Now** and **Text Us** buttons
+- “Book Appointment” CTA
 
-- **Services Section**
+### ✔ Services Section
 
-  - List of core services (oil change, diagnostics, tune-ups, brakes)
-  - Clean layout that adapts to mobile and desktop
+- Grid layout
+- Simple and readable
+- Icons + descriptions
+- Mobile-first structure
 
-- **Gallery Section**
+### ✔ Recent Work (Gallery)
 
-  - Grid of recent work with image placeholders
-  - Designed to be swapped with real photos of completed jobs
+- Ready for real client job photos
 
-- **Appointment Form**
+### ✔ Appointment Form (with validation)
 
-  - Collects:
-    - Name
-    - Phone
-    - Car make/model/year
-    - Service needed
-    - Preferred date
-    - Extra notes
-  - Currently logs submissions to the console and shows a basic confirmation message
-  - Can be wired later to email/SMS or a backend API
+- Required fields: name, phone, service
+- Phone formatting handled (digits-only validation)
+- Error + success messages
+- Form clears on successful submission
+- Sends email notifications through **Formspree**
+- Failures show errors without clearing form
 
-- **Contact Section**
+---
 
-  - Call/text info with quick buttons for mobile users
+## 🛡 SEO & Metadata
 
-- **Footer**
-  - Basic site footer with business name
+- Custom `<title>` and `<meta description>`
+- Meta keywords for Saint Cloud FL auto repair
+- Full **Open Graph** setup for social sharing
+- **Twitter card** preview
+- Works on Facebook, Instagram, Messenger, WhatsApp, LinkedIn, SMS apps
 
-## 📱 Responsiveness
+---
 
-The layout is built mobile-first and enhanced for larger screens:
+## 📱 PWA (Progressive Web App) Support
 
-- Small screens: single-column stacked layout
-- Larger screens (≥ 768px):
-  - Hero and Appointment sections use a two-column layout
-  - Gallery becomes a multi-column grid
+- `manifest.json` included
+- Icons: 180×180, 192×192, 512×512
+- Recognized by Chrome as an installable app
+- Bulldog icon appears on the home screen
 
-## 🚀 Getting Started
+---
 
-### Prerequisites
+## 🛠 Tech Stack
 
-- Node.js (LTS recommended)
-- npm or yarn
+- **React (Vite)**
+- **CSS**
+- **Formspree** (email form handling)
+- **Vercel** (deployment + hosting)
+- **PWA Manifest & Icons**
+- **Open Graph / SEO**
 
-### Installation
-
-```bash
-git clone https://github.com/Jcanela-g/mad-mike-mobile-mechanic.git
-cd mad-mike-mobile-mechanic
-npm install
-npm run dev
-```
-
-Then open the URL shown in the terminal.
-
-## 🛠️ Future Improvements
-
-- Hook appointment form to: Email service, SMS gateway, or backend API
-
-- Replace placeholder images with real job photos
-
-- Add basic analytics (page views, form submissions)
-
-- Add SEO meta tags and social sharing previews
-
-- Optional admin view to manage appointments
+---
 
 ## 🌐 Live Demo
 
 https://mad-mike-mobile-mechanic.vercel.app/
 
+---
+
 ## 🧑‍💻 Author
 
 Jose Canela
-Ride & Show Technician · Aspiring Software Engineer
+Ride & Show Technician · Software Engineer
 GitHub: [@Jcanela-g](https://github.com/Jcanela-g)
